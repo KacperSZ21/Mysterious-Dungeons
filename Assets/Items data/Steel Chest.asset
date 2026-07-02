@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2e6e2a4fef78a3429490d86fe779681, type: 3}
+  m_Name: Steel Chest
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  itemName: Steel Chest
+  itemType: 3
+  icon: {fileID: -7736556782503057505, guid: 119a166f9da694dd4834e556f1c65f76, type: 3}
+  damageBonus: 0
+  healthBonus: 0
+  defenseBonus: 35
+  damageType: 0
+  armorType: 0
