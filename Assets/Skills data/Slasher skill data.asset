@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a53650ca193004c90aa2d26ef3b72b, type: 3}
+  m_Name: Slasher skill data
+  m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  skillName: Slasher
+  icon: {fileID: 0}
+  cooldown: 5
+  damage: 20
+  damageType: 0
+  radius: 3
+  bonusDamage: 0
+  buffDuration: 0
+  healAmount: 0
+  particlePrefab: {fileID: 3802302459956397560, guid: b3416c8b2e3c7804b8c061dc4a36fc43, type: 3}
+  behaviour: {fileID: 11400000, guid: 34c08d41c28513a43bf3faad7046eb2f, type: 2}
