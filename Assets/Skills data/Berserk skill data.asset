@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a53650ca193004c90aa2d26ef3b72b, type: 3}
+  m_Name: Berserk skill data
+  m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  skillName: Berserk
+  icon: {fileID: 0}
+  cooldown: 5
+  damage: 0
+  damageType: 0
+  radius: 3
+  bonusDamage: 0
+  buffDuration: 0
+  attackSpeed: 0.2
+  healAmount: 0
+  particlePrefab: {fileID: 3432958286849152088, guid: 87ee7299dd44ed747af24dbb91bcd33b, type: 3}
+  behaviour: {fileID: 11400000, guid: c2b24b04af4d6a741ab32dc7113a374a, type: 2}

@@ -21,6 +21,7 @@ public class SkillData : ScriptableObject
     [Header("Buff")]
     public int bonusDamage;
     public float buffDuration;
+    public float attackSpeed;
 
     [Header("Heal")]
     public int healAmount;

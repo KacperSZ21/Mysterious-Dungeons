@@ -53,11 +53,13 @@ public class ClickToMove2D : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator animator;
+    private PlayerAttackBuff attackBuff;
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponentInChildren<Animator>();
+        attackBuff = GetComponent<PlayerAttackBuff>();
 
         currentHealth = GetMaxHealth();
         UpdateStatsUI();
@@ -244,8 +246,19 @@ public class ClickToMove2D : MonoBehaviour
         // DAMAGE
         if (enemyHealth != null)
         {
-            enemyHealth.TakeDamage(GetDamage(), currentDamageType);
-            Debug.Log("Zaatakowano wroga za " + GetDamage() + " obrażeń!");
+            AttackModifier modifier = attackBuff != null ? attackBuff.Consume() : new AttackModifier();
+
+            int finalDamage = baseDamage + modifier.bonusDamage;
+
+            DamageType finalDamageType = modifier.damageType ?? currentDamageType;
+
+            if (modifier.particlePrefab != null)
+            {
+                Instantiate(modifier.particlePrefab, enemyHealth.transform.position, Quaternion.identity);
+            }
+
+            // Tutaj później można dodać crit
+            enemyHealth.TakeDamage(finalDamage, finalDamageType);
         }
     }
 
