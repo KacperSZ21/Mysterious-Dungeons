@@ -9,4 +9,7 @@ public class SkillSlot
 
     [HideInInspector]
     public float lastCastTime;
+
+    [HideInInspector]
+    public bool Isready => Time.time >= lastCastTime + skill.cooldown;
 }

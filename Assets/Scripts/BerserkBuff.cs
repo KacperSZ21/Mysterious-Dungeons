@@ -7,19 +7,12 @@ public class BerserkBuff : MonoBehaviour
     private ClickToMove2D player;
 
     private Coroutine activeBuff;
+    private float previousAttackSpeed;
     private Color[] defaultColors;
 
     private void Awake()
     {
         player = GetComponent<ClickToMove2D>();
-    }
-
-    public void Activate(float newAttackSpeed, float duration)
-    {
-        if (activeBuff != null)
-            StopCoroutine(activeBuff);
-
-        activeBuff = StartCoroutine(BerserkRoutine(newAttackSpeed, duration));
 
         defaultColors = new Color[eyeSprites.Length];
 
@@ -29,9 +22,20 @@ public class BerserkBuff : MonoBehaviour
         }
     }
 
+    public void Activate(float newAttackSpeed, float duration)
+    {
+        if (activeBuff != null)
+        {
+            RestoreState();
+            StopCoroutine(activeBuff);
+        }
+
+        activeBuff = StartCoroutine(BerserkRoutine(newAttackSpeed, duration));
+    }
+
     IEnumerator BerserkRoutine(float attackSpeed, float duration)
     {
-        float previousAttackSpeed = player.attackCooldown;
+        previousAttackSpeed = player.attackCooldown;
 
         player.attackCooldown = attackSpeed;
 
@@ -50,6 +54,15 @@ public class BerserkBuff : MonoBehaviour
         player.attackCooldown = previousAttackSpeed;
 
         activeBuff = null;
+    }
 
+    private void RestoreState()
+    {
+        player.attackCooldown = previousAttackSpeed;
+
+        for (int i = 0; i < eyeSprites.Length; i++)
+        {
+            eyeSprites[i].color = defaultColors[i];
+        }
     }
 }
